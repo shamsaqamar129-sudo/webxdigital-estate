@@ -1,0 +1,65 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-obsidian: #060608;
+  --color-obsidian-elevated: #0D0E12;
+  --color-obsidian-card: #12141A;
+  --color-gold: #C9A962;
+  --color-gold-bright: #DFC07A;
+  --color-gold-deep: #9E7E38;
+  --color-ivory: #FAF8F5;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    background-color: #060608;
+    color: #FFFFFF;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.font-display {
+  font-family: var(--font-serif);
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.gold-gradient-text {
+  background: linear-gradient(135deg, #F3E3B6 0%, #C9A962 50%, #9E7E38 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-metallic-btn {
+  background: linear-gradient(135deg, #D8B973 0%, #C9A962 55%, #B18F46 100%);
+  color: #060608;
+}
+
+.gold-metallic-btn:hover {
+  background: linear-gradient(135deg, #E5C987 0%, #D4B46C 55%, #BE9C52 100%);
+}
